@@ -17,6 +17,8 @@ export default function CourseList() {
   function handleAdd(event) {
     event.preventDefault(); // 자동전송 방지
     // TODO: 빈 입력 검사, 새 과목 객체 생성, setCourses 호출, 입력창 초기화
+    event.
+
   }
 
   // TODO 2 (필수): 완료 상태 변경 기능을 구현하세요.
@@ -31,15 +33,15 @@ export default function CourseList() {
       <section className="stats" aria-label="과목 통계">
         <div className="stat">
           <span>전체 과목</span>
-          <strong>{courses.length}</strong> // 전체 과목 갯수가 몇 개인지
+          <strong>{courses.length}</strong> 
         </div>
         <div className="stat">
           <span>완료</span>
-          <strong className="green">{doneCount}</strong> // 완료된 게 몇 개인지
+          <strong className="green">{doneCount}</strong> 
         </div>
         <div className="stat">
           <span>진행 중</span>
-          <strong className="blue">{courses.length - doneCount}</strong> // 진행 중인 건 몇 개인지
+          <strong className="blue">{courses.length - doneCount}</strong> 
         </div>
       </section>
       <section className="panel">

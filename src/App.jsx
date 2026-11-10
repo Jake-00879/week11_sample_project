@@ -1,6 +1,5 @@
-import CourseList from "./components/CourseList.jsx"; // 컴포넌트 CourseList 불러와서 적용
-
-export default function App() { {/*App이란 함수를 가져다가 쓸 수 있게 export했다.  */}
+import CourseList from "./components/CourseList.jsx"; 
+export default function App() { 
   return (
     <main className="page">
       <header className="hero">
@@ -11,11 +10,11 @@ export default function App() { {/*App이란 함수를 가져다가 쓸 수 있�
         </div>
         <span className="tag">STUDENT STARTER</span>
       </header>
-      <CourseList /> /*CourseList를 여기다가 찍는다.*/
+      <CourseList /> 
       <footer className="bottom">
         <span>OSS Week 11 · React</span>
         <span>Local state only · Refresh resets data</span>
       </footer>
-    </main>/*화면 구성하는 요소들 하나하나 찍는 역할*/
+    </main>
   );
 }
