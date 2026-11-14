@@ -61,7 +61,7 @@ export default function CourseList() {
           <strong className="green">{doneCount}</strong>
         </div>
         <div className="stat">
-          <span>진행 중</span>
+          <spanp>진행 중!!</spanp>
           <strong className="blue">{courses.length - doneCount}</strong>
         </div>
       </section>
