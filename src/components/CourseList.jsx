@@ -35,17 +35,28 @@ export default function CourseList() {
 
   // TODO 2 (필수): 완료 상태 변경 기능을 구현하세요.
   // TODO: map과 spread(...)를 사용하여 해당 id의 completed를 반전
-  
-  function handleToggle(id){
+
+  function handleToggle(id) {
     const ncourses = courses.map((course) => {
-      if(course.id == id){
-        return {...course, completed: !course.completed};
+      if (course.id == id) {
+        return { ...course, completed: !course.completed };
       }
       return course;
     });
     setCourses(ncourses);
   }
-    
+  /*const search = document.querySelector("#search");
+  search.addEventListener("input", function(){
+    const keyword = search.value.trim().toLowerCase();
+    const result = courses.filter(course =>
+      course.name.toLowerCase().includes(keyword)
+    );
+    setCourses(result);
+  }) else {
+    const origin = courses;
+    setCourses(origin);
+  };*/
+  
 
   const doneCount = courses.filter((course) => course.completed).length;
 
@@ -87,6 +98,14 @@ export default function CourseList() {
             + Add Course
           </button>
         </form>
+        <input
+          className="input"
+          id="search"
+          placeholder="어떤 과목을 찾으시나요?"
+          onChange={(event) => {
+            const keyword = event.target.value;
+          }}
+        />
         <div className="list-head">
           <span>COURSE</span>
           <span>CATEGORY</span>
