@@ -2,7 +2,7 @@
 export const initialCourses = [
   { id: 1, name: 'Open Source Studio', category: 'Major', completed: false },
   { id: 2, name: 'System Programing', category: 'Major', completed: true },
-  { id: 3, name: '철학개론', category: 'Elective', completed: false },
-  { id: 4, name: '신호 및 시스템', category: 'Major', completed: false },
+  { id: 3, name: 'Introduction to Philosophy', category: 'Elective', completed: false },
+  { id: 4, name: 'Signals and Systems', category: 'Major', completed: false },
   { id: 5, name: 'ERC', category: 'Elective', completed: true },
 ];
