@@ -6,7 +6,8 @@ export default function CourseList() {
   // [제공] 초기 배열을 useState로 관리합니다.
   const [courses, setCourses] = useState(initialCourses);
   const [newName, setNewName] = useState("");
-  const [fcourses, fsetCourses] = useState(initialCourses); //검색을 위한 복사본 
+  const [keyword, setKeyword] = useState(""); // 검색 키워드를 따로 관리
+  const filterd = courses.filter((course) => course.name.toLowerCase().includes(keyword.toLowerCase()));
 
   // [제공] 삭제 기능: filter로 새 배열을 만들어 업데이트합니다.
   function handleDelete(id) {
@@ -46,13 +47,7 @@ export default function CourseList() {
     });
     setCourses(ncourses);
   }
-  function search(keyword){
-    const tword = keyword.trim().toLowerCase();
-    const result = fcourses.filter(course =>
-      course.name.toLowerCase().includes(tword));
   
-    fsetCourses(result);
-  }
   
 
   const doneCount = courses.filter((course) => course.completed).length;
@@ -99,7 +94,7 @@ export default function CourseList() {
           className="input"
           id="search"
           placeholder="어떤 과목을 찾으시나요?"
-          onChange={(event) => search(event.target.value)}
+          onChange={(event) => setKeyword(event.target.value)}
         />
         <div className="list-head">
           <span>COURSE</span>
@@ -109,7 +104,7 @@ export default function CourseList() {
         {courses.length === 0 && (
           <div className="empty">등록된 과목이 없습니다.</div>
         )}
-        {courses.map((course) => (
+        {filterd.map((course) => (
           <CourseItem
             key={course.id}
             course={course}
